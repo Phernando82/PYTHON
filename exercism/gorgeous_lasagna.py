@@ -29,42 +29,39 @@ Volte pela receita, adicionando notas e documentação.
 
 """
 
+"""Functions used in preparing Guido's gorgeous lasagna.
 
-# TODO: define the 'EXPECTED_BAKE_TIME' constant
-
-class Lasagna:
-    def __init__(self, EXPECTED_BAKE_TIME = 40):
-        self.EXPECTED_BAKE_TIME = EXPECTED_BAKE_TIME
-
-
-lasagna = Lasagna()
-
-lasagna.EXPECTED_BAKE_TIME
+Learn about Guido, the creator of the Python language: https://en.wikipedia.org/wiki/Guido_van_Rossum
+"""
+EXPECTED_BAKE_TIME = 40
+PREPARATION_TIME = 40
 
 
-# # TODO: define the 'bake_time_remaining()' function
+def bake_time_remaining(elapsed_bake_time):
+    """Calculate the bake time remaining.
 
-def bake_time_remaining(min):
-    btr = 40 - min
-    return btr
+    :param elapsed_bake_time: int - baking time already elapsed.
+    :return: int - remaining bake time (in minutes) derived from 'EXPECTED_BAKE_TIME'.
 
-bake_time_remaining(30)
-
-
-# # TODO: consider defining the 'PREPARATION_TIME' constant
-# #       equal to the time it takes to prepare a single layer
-
-def preparation_time_in_minutes(layers):
-    ptim = layers * 2
-    return ptim
-
-preparation_time_in_minutes(2)
-
-def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
-    number_of_layers *= 2
-    etim = number_of_layers + elapsed_bake_time
-    return etim
-
-elapsed_time_in_minutes(3, 20)
+    Function that takes the actual minutes the lasagna has been in the oven as
+    an argument and returns how many minutes the lasagna still needs to bake
+    based on the `EXPECTED_BAKE_TIME`.
+    """
+    return EXPECTED_BAKE_TIME - elapsed_bake_time
 
 
+def preparation_time_in_minutes(t):
+    """
+    function takes one number and return the total preparation time
+    """
+    return t * 2
+
+
+def elapsed_time_in_minutes(numbers_of_layers, elapsed_bake_time):
+    """
+    Return elapsed cooking time.
+
+    This function takes two numbers representing the number of layers & the time already spent
+    baking and calculates the total elapsed minutes spent cooking the lasagna.
+    """
+    return numbers_of_layers * 2 + elapsed_bake_time
