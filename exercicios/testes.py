@@ -1,15 +1,6 @@
+def fun(a=12, b=12):
+    print(a // 9)
+    return (a * b)
 
-# string = 'fernando'
-# for char in range(len(string)):
-#     if string[char:char + 1] == 'a':
-#         print(string[char])
 
-a = input('Digite o valor de a:')
-
-while a == 0:
-    print('Valor incorreto, digite número diferente de Zero!')
-    a = input('Digite o valor de a:')
-else:
-
-    print(a)
-    
+fun(a=9, b=2)
