@@ -1,6 +1,6 @@
-def fun(a=12, b=12):
-    print(a // 9)
-    return (a * b)
+import turtle
 
-
-fun(a=9, b=2)
+turtle.color('deep pink')
+style = ('Courier', 30, 'italic')
+turtle.write('Hello!', font=style, align='center')
+# turtle.hideturtle()
